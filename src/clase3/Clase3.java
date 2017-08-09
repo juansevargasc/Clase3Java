@@ -31,22 +31,25 @@ public class Clase3
     public static double calcularSalario(int horas, int valor)
     {
         double total = 0;
+        double parcial = 0;
         if(horas > 40)
         {
            total = 40 * valor;
            System.out.println("Primeras 40 horas: " + total);
            if(horas < 48)
            {
-               System.out.println("Horas pagadas al doble: " + (horas - 40) * (2 * valor));
-               total += (horas - 40) * (2 * valor);
+               parcial = (horas - 40) * (2 * valor);
+               total += parcial;
+               System.out.println("Horas pagadas al doble: " + parcial);
            }
            else
            {
-               System.out.println("Horas pagadas al doble: " + 8 * (2 * valor));
-               total += (8) * (2 * valor);
-               System.out.println("Horas pagadas al triple: " + (horas - 48) * (valor * 3));
-               total += (horas - 48) * (valor * 3);
-               
+               parcial = (8) * (2 * valor);
+               total += parcial;
+               System.out.println("Horas pagadas al doble: " + parcial);
+               parcial = (horas - 48) * (valor * 3);
+               total += parcial;
+               System.out.println("Horas pagadas al triple: " + parcial); 
            }
         }
          else
